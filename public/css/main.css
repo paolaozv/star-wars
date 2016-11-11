@@ -1,0 +1,10 @@
+* {
+	box-sizing: border-box;
+}
+
+.total {
+    background-color: black;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 50%;
+}
