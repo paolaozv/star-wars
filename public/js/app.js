@@ -29,8 +29,21 @@ var mostrarPersonajes = function(response) {
 					  .replace("__url__", personaje.url);
 	});
 	$("#people").html(personajes);
-	$("#next").attr("data-url", response.next);
-	$("#previous").attr("data-url", response.previous);
+	if (response.next != null){
+		var next = response.next;
+		var array = next.split("");
+		array.splice(4, 0, "s");
+		var cadena = array.join("");
+	}
+	if (response.previous != null){
+		var previous = response.previous;
+		var arrayP = previous.split("");
+		arrayP.splice(4, 0, "s");
+		var cadenaP = arrayP.join("");
+		console.log(cadenaP);
+	}
+	$("#next").attr("data-url", cadena);
+	$("#previous").attr("data-url", cadenaP);
 	if (!response.next) {
 		$("#next").fadeOut("fast");
 	} else {
