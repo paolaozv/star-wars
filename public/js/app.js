@@ -12,18 +12,13 @@ var template = '<div class="col s12 m4">' +
 			  	'</div>';
 
 var cargarPagina = function() {
-	$.getJSON("http://swapi.co/api/people/", mostrarPersonajes);
+	$.getJSON("https://swapi.co/api/people/", mostrarPersonajes);
 	$("#next").click(mostrarSiguiente);
 	$("#previous").click(mostrarAnterior);
 	$("#people").on("click", ".about", mostrarInfo);
 };
 
 $(document).ready(cargarPagina);
-
-/*var crearTemplate = function() {
-	var div = $("<div>");
-	div.addClass("")
-};*/
 
 var mostrarPersonajes = function(response) {
 	$("#total").text(response.results.length);
